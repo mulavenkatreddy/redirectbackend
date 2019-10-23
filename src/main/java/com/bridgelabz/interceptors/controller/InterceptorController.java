@@ -46,8 +46,12 @@ public class InterceptorController {
 	}
 	
 	@GetMapping(value = "/generateurl")
-	public String  generateUrl() {
+	public String  generateUrl(HttpServletRequest request) {
 		
+		
+		System.err.println(request.getHeader("referer"));
+		//System.err.println(request.getHeader("referer"));
+
 		UUID uuid = UUID.randomUUID();
 		System.out.println("UUID : "+uuid);
 		urllist.add(uuid.toString());
